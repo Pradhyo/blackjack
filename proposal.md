@@ -1,6 +1,6 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Proposal
-Pradhyo Bijja
+Pradhyo Bijja           
 August 2nd, 2017
 
 ## Proposal
