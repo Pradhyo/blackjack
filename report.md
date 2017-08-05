@@ -38,7 +38,7 @@ This project will make use of [Open AI Gym's](https://gym.openai.com/) [Blackjac
 
 The actions and corresponding payouts of the average casino player are simulated using the Open AI blackjack environment mentioned above. Each round, either hit or stick is chosen at random. Over 1000 rounds, the average payout was found to be around -400 as seen below.       
 
-![average payout after 1000 rounds for average player](images/average_player.jpg)
+![average payout after 1000 rounds for average player](images/average_player.JPG)
 
 
 ### Algorithms and Techniques
@@ -52,7 +52,7 @@ Size of the state space is 400.
 
 The agent maintains a Q-table which contains an entry for each state and the corresponding Q values for each action possible. When in a particular state of the environment, the agent looks up the maximum Q value for that state and takes the corresponding action. If a state is being reached for the first time, the Q value for each action of that state is initialized to 0 and the action in this case is random as all Q values for the new state are 0. The Q values are then updated based on the reward obtained from the environment using the below formula [4].
 
-![Q = Q*(1-alpha) + alpha(reward + discount * utility of next observation)](images/q_learning_formula.jpg)
+![Q = Q*(1-alpha) + alpha(reward + discount * utility of next observation)](images/q_learning_formula.JPG)
 
 ##### Learning rate (alpha)
 The agent has to learn based on the reward for a particular action and the learning rate determines how much the agent learns. As can be seen above formula, *alpha*=0 will make the agent not learn anything while *alpha*=1 will make the agent consider only the most recent information.
@@ -66,7 +66,7 @@ To ensure the agent learns enough about the environment, it has to explore the e
 #### Number of episodes to train
 This is a parameter I added to easily tweak the rate of decay of *epsilon* depending on the number of episodes used to teach the agent. *epsilon* drops to 90% of its initial value in the first 30% of `num_episodes_to_train`. *epsilon* then drops to 10% of its initial value in the next 40% of `num_episodes_to_train`. *epsilon* finally becomes 0 in the final 30% of `num_episodes_to_train`. Here 0 is the tolerance value at which we stop the learning process of the agent by setting *alpha* to 0. *epsilon* value decays like in the below graph when the `num_episodes_to_train=800`.
 
-![epsilon_decay](images/epsilon_decay.jpg)
+![epsilon_decay](images/epsilon_decay.JPG)
 
 ### Benchmark
 
@@ -88,7 +88,7 @@ The Agent can be created by passing the environment and the parameters discussed
 
 Only one custom parameter (`num_episodes_to_train`) was tweaked and suitable choices were made for the others. Initial value of *epsilon* was chosen to be its maximum value of 1. *alpha* was chosen to a common value of 0.5 and the discount factor *gamma* was chosen to be 0.2 to keep the agent short-sighted as most of the rounds finish in one, two or three states. The optimum value for `num_episodes_to_train` was searched over a list of values and chosen to be 800 based on below image. 
 
-![Search for optimum value of num_episodes_to_train](images/num_episodes_search.jpg)
+![Search for optimum value of num_episodes_to_train](images/num_episodes_search.JPG)
 
 ## IV. Results
 _(approx. 2-3 pages)_
@@ -99,7 +99,7 @@ The agent is created using the parameters chosen above and the simulations are r
 
 Obtaining an average payout per 1000 rounds of around -125 over a large number of simulations proves the robustness of the model as such a large sample tests the model thoroughly. However, the payout over 1000 rounds of the game is likely to vary between -100 and -150 due to the inherent randomness of the game as seen below.
 
-![average payout after 1000 rounds for trained agent](images/trained_agent.jpg)
+![average payout after 1000 rounds for trained agent](images/trained_agent.JPG)
 
 ### Justification
 
