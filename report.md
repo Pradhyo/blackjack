@@ -116,7 +116,7 @@ The learned model achieves an average payout per 1000 rounds of around **-125** 
 
 Below is a human readable representation of the strategy learned by the agent. The left half of the image shows the strategy when there is no usable ace (value 1) and the right when there is a usable ace card (ace considered 11). 'H' means hit and 'S' means stick while '-' means the agent hasn't seen that state while learning. Each row represents the player's hand and the columns represent the dealer's 'up card'. It can be seen that the agent seems to have learned to 'hit' when it's hand is not close to 21. But the agent seems to 'stick' a lot more possibly to avoid going bust - a reasonably good strategy. It can also be seen that the strategy is clearly wrong in certain places and some of these are marked by red lines. The agent also did not get a chance to explore some rare states as marked by the blue lines.      
 
-![Search for optimum value of num_episodes_to_train](images/num_episodes_search.JPG)
+![Learned Strategy](images/learned_strategy.JPG)
 
 ### Justification
 
